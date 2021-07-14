@@ -26,7 +26,7 @@ app.listen(process.env.PORT || 3000, function(){
     });
     
     app.get('/prueba', (req, res) => {
-        const sql = 'SELECT * from prueba';
+        const sql = 'SELECT * FROM prueba';
     
         conexion.query(sql, (err, result)=>{
             if (err) throw err;
