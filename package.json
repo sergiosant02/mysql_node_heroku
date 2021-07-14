@@ -4,7 +4,7 @@
   "description": "mysql",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node index.js"
   },
   "author": "sergio",
   "license": "ISC",
