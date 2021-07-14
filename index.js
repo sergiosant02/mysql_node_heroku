@@ -20,6 +20,10 @@ app.listen(process.env.PORT || 3000, function(){
     app.get('/h', (req,res)=>{
         res.send("Welcomes");
     });
+
+    app.get('/hola', (req,res)=>{
+        res.send("hola");
+    });
     
     app.get('/prueba', (req, res) => {
         const sql = 'SELECT * from prueba';
