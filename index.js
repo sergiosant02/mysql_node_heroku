@@ -8,6 +8,7 @@ app.set('port', (process.env.PORT || 8080))
 //mysql://b997872b53beea:2a43ebc9@us-cdbr-east-04.cleardb.com/heroku_8161b00dcfaf10f
 
 const conexion = mysql.createConnection({
+    timeout:3000,
     host:"us-cdbr-east-04.cleardb.com",
     database:"heroku_8161b00dcfaf10f",
     user:"b997872b53beea",
