@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
 
+app.set('port', (process.env.PORT || 8080))
 //mysql://b997872b53beea:2a43ebc9@us-cdbr-east-04.cleardb.com/heroku_8161b00dcfaf10f
 
 const conexion = mysql.createConnection({
