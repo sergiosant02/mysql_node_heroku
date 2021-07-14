@@ -28,13 +28,14 @@ app.listen(process.env.PORT || 3000, function(){
     app.get('/prueba', (req, res) => {
         const sql = 'SELECT * FROM prueba';
     
-        conexion.query(sql, (err, result)=>{
-            if (err) throw err;
-            if (result.length > 0){
-                res.json(result);
-            } else {
-                res.send("No hay resultados")
+        conexion.query(sql, (err, result,)=>{
+            if (err){
+                console.log('error');
+                throw err;
             }
+            
+                res.json(result);
+            
         });
     });
   });
