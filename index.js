@@ -22,7 +22,7 @@ app.listen(process.env.PORT || 3000, function(){
     });
 
     app.get('/hola', (req,res)=>{
-        res.send("hola");
+        res.send("holas");
     });
     
     app.get('/prueba', (req, res) => {
