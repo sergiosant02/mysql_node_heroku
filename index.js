@@ -22,4 +22,17 @@ app.get('/h', (req,res)=>{
     res.send("Welcome");
 });
 
+app.get('/prueba', (req, res) => {
+    const sql = 'SELECT * from prueba';
+
+    conexion.query(sql, (err, result)=>{
+        if (err) throw err;
+        if (result.length > 0){
+            res.json(result);
+        } else {
+            res.send("No hay resultados")
+        }
+    });
+});
+
 conexion.end();
