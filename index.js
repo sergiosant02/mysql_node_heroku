@@ -1,4 +1,7 @@
 const mysql = require("mysql");
+const bodyParse = require("body-parse");
+const express = require("express");
+const app = express();
 
 //mysql://b997872b53beea:2a43ebc9@us-cdbr-east-04.cleardb.com/heroku_8161b00dcfaf10f
 
@@ -15,6 +18,10 @@ conexion.connect(function(error){
     } else {
         console.log("Conexion exitosa");
     }
+});
+
+app.get('/', (req,res)=>{
+    res.send("Welcome");
 });
 
 conexion.end();
