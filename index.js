@@ -21,7 +21,7 @@ conexion.connect(function(error){
     }
 });
 
-app.get('/', (req,res)=>{
+app.get('/h', (req,res)=>{
     res.send("Welcome");
 });
 
