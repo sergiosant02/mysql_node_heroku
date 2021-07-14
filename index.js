@@ -13,6 +13,7 @@ const conexion = mysql.createConnection({
     user:"b997872b53beea",
     password:"2a43ebc9"
 });
+conexion.connect();
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
