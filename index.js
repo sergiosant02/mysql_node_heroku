@@ -13,13 +13,7 @@ const conexion = mysql.createConnection({
     password:"2a43ebc9"
 });
 
-conexion.connect(function(err){
-    if (err){
-        throw err;
-    } else {
-        console.log("Conexion exitosa");
-    }
-});
+
 
 app.get('/h', (req,res)=>{
     res.send("Welcome");
