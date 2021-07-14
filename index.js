@@ -15,24 +15,26 @@ const conexion = mysql.createConnection({
 
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+
+    app.get('/h', (req,res)=>{
+        res.send("Welcome");
+    });
+    
+    app.get('/prueba', (req, res) => {
+        const sql = 'SELECT * from prueba';
+    
+        conexion.query(sql, (err, result)=>{
+            if (err) throw err;
+            if (result.length > 0){
+                res.json(result);
+            } else {
+                res.send("No hay resultados")
+            }
+        });
+    });
   });
 
 
-app.get('/h', (req,res)=>{
-    res.send("Welcome");
-});
 
-app.get('/prueba', (req, res) => {
-    const sql = 'SELECT * from prueba';
-
-    conexion.query(sql, (err, result)=>{
-        if (err) throw err;
-        if (result.length > 0){
-            res.json(result);
-        } else {
-            res.send("No hay resultados")
-        }
-    });
-});
 
 conexion.end();
