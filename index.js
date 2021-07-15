@@ -29,7 +29,7 @@ app.get('/hola', (req,res)=>{
 });
 
 app.get('/', (req, res) => {
-    const sql = 'SELECT * FROM prueba';
+    const sql = 'SELECT * FROM productos';
     
 
     conexion.query(sql, (err, result,fields)=>{
