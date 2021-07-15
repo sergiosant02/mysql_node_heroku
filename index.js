@@ -53,10 +53,10 @@ app.post('/p', (request, response) => {
     console.log("Cuerpo del post: "+request.body);
 
     const post = {nombre: "hola2", precio: 2.5, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
-    conexion.query('INSERT INTO productos SET ?', request.body, (err, result) => {
+    conexion.query('INSERT INTO productos (nombre, precio, descripcion, tipo, foto) VALUES ?', request.body, (err, result) => {
         if (err) {
             console.log("Cuerpo del post:")
-    console.log("Cuerpo del post: "+request.body);
+            console.log("Cuerpo del post: "+request.body);
             console.log('error: ' + err);
             //throw err;
         } else {
