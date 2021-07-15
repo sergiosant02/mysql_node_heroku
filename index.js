@@ -11,7 +11,7 @@ app.use(bp.urlencoded({ extended: true }));
 
 app.set('port', (process.env.PORT || 8080));
 //mysql://b997872b53beea:2a43ebc9@us-cdbr-east-04.cleardb.com/heroku_8161b00dcfaf10f
-const p = new Productos("hola3", 2.5, "kl", "vrvvg", "frvrvr");
+
 const conexion = mysql.createConnection({
     //timeout:3000,
     host:"us-cdbr-east-04.cleardb.com",
@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
 app.post('/p', (request, response) => {
     
     const post = {nombre: "hola2", precio: 2.5, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
-    
+    const p = new Productos("hola3", 2.5, "kl", "vrvvg", "frvrvr");
     const data = request.body;
     console.log("Cuerpo del post:")
     console.log("Cuerpo del post: "+data);
