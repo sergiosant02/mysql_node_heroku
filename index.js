@@ -40,10 +40,9 @@ app.listen(process.env.PORT || 3000, function(){
                 res.json(result);
             
         });
-        
+        conexion.end();
     });
   });
-  conexion.end();
 
 
 
