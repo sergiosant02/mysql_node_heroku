@@ -49,7 +49,7 @@ app.post('/p', (request, response) => {
     conexion.query('INSERT INTO productos SET ?', request.body.json, (err, result) => {
         if (err) {
             console.log('error: ' + err);
-            throw err;
+            //throw err;
         }
         //response.status(201).send(`Producto added with ID: ${result.insertId}`);
         response.send("ok");
