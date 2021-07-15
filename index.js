@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 
 app.post('/p', (request, response) => {
     console.log(request.body);
-    conexion.query('INSERT INTO productos SET ?', request.body, (err, result) => {
+    conexion.query('INSERT INTO productos SET ?', request.body.json, (err, result) => {
         if (err) {
             console.log('error: ' + err);
             throw err;
