@@ -52,6 +52,7 @@ app.post('/p', (request, response) => {
             throw err;
         }
         //response.status(201).send(`Producto added with ID: ${result.insertId}`);
+        response.send("ok");
     });
 });
 
