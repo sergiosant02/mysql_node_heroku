@@ -29,7 +29,7 @@ app.listen(process.env.PORT || 3000, function(){
     
     app.get('/prueba', (req, res) => {
         const sql = 'SELECT * FROM prueba';
-        await conexion.connect();
+        conexion.connect();
     
         conexion.query(sql, (err, result,fields)=>{
             if (err){
