@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 
     conexion.query(sql, (err, result,fields)=>{
         if (err){
-            console.log('error: ' + err);
+            console.log('errores: ' + err);
             throw err;
         }
         //res.send(result)
