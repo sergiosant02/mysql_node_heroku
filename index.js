@@ -37,8 +37,8 @@ app.get('/', (req, res) => {
             console.log('error: ' + err);
             throw err;
         }
-        res.send(result)
-            //res.json(result);
+        //res.send(result)
+        res.json(result);
         
     });
     
