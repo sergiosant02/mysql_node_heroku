@@ -50,13 +50,13 @@ app.get('/', (req, res) => {
 
 app.post('/p', (request, response) => {
     console.log("Cuerpo del post:")
-    console.log("Cuerpo del post: "+request.body.json);
+    console.log("Cuerpo del post: "+request.body.nombre);
 
     const post = {nombre: "hola2", precio: 2.5, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
     conexion.query('INSERT INTO productos SET ?', post, (err, result) => {
         if (err) {
             console.log("Cuerpo del post:")
-            console.log("Cuerpo del post: "+request.body.json);
+            console.log("Cuerpo del post: "+request.body);
             console.log('error: ' + err);
             //throw err;
         } else {
