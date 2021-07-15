@@ -29,7 +29,7 @@ app.get('/hola', (req,res)=>{
 });
 
 app.get('/', (req, res) => {
-    const sql = 'SELECT * FROM prueba WHERE id = 15';
+    const sql = 'SELECT * FROM prueba';
     
 
     conexion.query(sql, (err, result,fields)=>{
@@ -42,6 +42,14 @@ app.get('/', (req, res) => {
         
     });
     
+});
+
+app.post('/users', (request, response) => {
+    conexion.query('INSERT INTO productos SET ?', request.body, (error, result) => {
+        if (error) throw error;
+ 
+        response.status(201).send(`Producto added with ID: ${result.insertId}`);
+    });
 });
 
 
