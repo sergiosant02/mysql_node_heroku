@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
 app.post('/p', (request, response) => {
     
-    const post = {nombre: "hola2", precio: 2.5, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
+    const post = {nombre: "hola2", precio: 2.50, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
     const data = request.body;
     const p = new Productos(data.nombre, data.precio, data.tipo, data.descripcion, data.foto);
     console.log("Cuerpo del post:")
