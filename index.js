@@ -49,11 +49,15 @@ app.post('/p', (request, response) => {
     console.log("Cuerpo del post: "+request.body);
     conexion.query('INSERT INTO productos SET ?', request.body, (err, result) => {
         if (err) {
+            console.log("Cuerpo del post:")
+    console.log("Cuerpo del post: "+request.body);
             console.log('error: ' + err);
             //throw err;
+        } else {
+
+            response.send("ok");
         }
         //response.status(201).send(`Producto added with ID: ${result.insertId}`);
-        response.send("ok");
     });
 });
 
