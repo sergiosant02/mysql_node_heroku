@@ -1,18 +1,27 @@
-class Productos {
-    nombre = '';
-    precio = 0.0;
-    descripcion = '';
-    tipo = "";
-    foto = "";
+const {Schema, model} = require("mongoose")
 
-    constructor(nombre, precio, descripcion, tipo, foto){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-        this.tipo = tipo;
-        this.foto = foto;
-    }
+const ProductosSchema = Schema({
+    nombre: {
+        type: String,
+        required: true
+    },
+    precio: {
+        type: Number,
+        required: true
+    },
+    descripcion: {
+        type: String,
+        required: true
+    },
+    tipo: {
+        type: String,
+        required: true
+    },
+    foto: {
+        type: String,
+        required: true
+    },
+})
 
-}
 
-module.exports = Productos;
+module.exports = model("Productos", ProductosSchema);

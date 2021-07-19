@@ -51,7 +51,7 @@ pool.getConnection((err, conexion) =>{
         
         const post = {nombre: "hola2", precio: 2.50, tipo: "kl", descripcion: "vrvvg", foto:"frvrvr"};
         const data = request.body;
-        const p = new Productos(data.nombre, data.precio, data.tipo, data.descripcion, data.foto);
+        const p = new Productos(data);
         console.log("Cuerpo del post:")
         console.log("Cuerpo del post: "+data);
         conexion.query('INSERT INTO productos SET ?', p, (err, result) => {
